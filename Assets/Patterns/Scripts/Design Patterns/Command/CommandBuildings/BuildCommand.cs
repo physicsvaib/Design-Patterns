@@ -8,17 +8,19 @@ namespace Phyw.DesignPatterns
     #region Variables
     public GameObject building;
     GameObject tower;
-    Vector3 position;
+    Vector3 position, offset;
     Quaternion rotation;
-    #endregion
-
-    #region UnityMethods
 
     #endregion
 
     #region CustomMethods
 
-
+    public void SetOffset(Vector3 off)
+    {
+      position -= offset;
+      offset = off;
+      position += offset;
+    }
 
     public void SetProperties(Vector3 position, Quaternion rotation)
     {
@@ -35,6 +37,7 @@ namespace Phyw.DesignPatterns
     {
       Destroy(tower);
     }
+
     #endregion
   }
 }
